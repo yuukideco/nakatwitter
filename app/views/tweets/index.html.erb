@@ -1,4 +1,10 @@
 <div class="contents row">
+  <% if user_signed_in? %>
+  <div class="container">
+    <%= render partial: "form", locals: { tweet: @tweet } %>
+  </div>
+  <% end %>
+
   <% @tweets.each do |tweet| %>
     <%= render partial: "tweet", locals: { tweet: tweet } %>
   <% end %>
